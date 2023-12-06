@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.Image {
+  width: 500px;
+  margin: 10px;
+  height: auto;
+}
+ img {
+  width: 100%;
+ }
+
+.Dropbox {
+  width: 600px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.Click{
+  width: fit-content;
+  margin: 10px;
+  background-color: gray;
+}
+
+.Clear{
+  width: fit-content;
+  border: 3px solid black;
+  margin: 10px;
+}
