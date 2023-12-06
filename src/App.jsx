@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useCallback, useEffect, useRef, FC } from 'react';
 import { useDropzone } from 'react-dropzone'
+import Crop from './components/Crop';
 
 
 const App = () => {
@@ -14,7 +15,13 @@ const App = () => {
   const [cropUrl, setCropUrl] = useState(``)
   const [errorMessage, setErrorMessage] = useState('')
   const inputElement = useRef(null)
-  
+  const [modal, setModal] = useState(false)
+  const canvasElement = useRef(null);
+
+  const closeModal = () => {
+    setModal(false)
+  }
+
   const onChangeInputFile = (e, setState) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0]
@@ -29,6 +36,7 @@ const App = () => {
       setUrl('')
       let imageInputForm = document.getElementById('imageFile');
       imageInputForm.value = '';
+      setCropUrl('')
     }
   }
 
@@ -45,7 +53,7 @@ const App = () => {
 
     if (acceptedFiles[0].size > 5 * 1024 * 1024) {
       setErrorMessage({
-        message: "選択した画像のデータ容量が5MBを超えています。",
+        message: "重い",
       })
       setUrl('')
       return
@@ -105,7 +113,21 @@ const App = () => {
           </div>
           <div className="Image">
             {url && <img src={url}/>}
+            {cropUrl && <img src={cropUrl}/>}
+            {url && <button type="button" className='Dropbox' onClick={() => setModal(true)}>改造</button>}
           </div>
+
+          {modal && (
+            <Crop
+              open={modal}
+              url={url}
+              setCropUrl={setCropUrl}
+              fileInputElement={inputElement}
+              stateModal={() => {setModal(false)}}
+              onClose={() => {closeModal()}}
+            />
+          )}
+
         </div>
       </div>
     </div>
