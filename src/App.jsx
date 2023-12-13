@@ -1,13 +1,8 @@
 import './App.css';
-import React, { useState, useCallback, useEffect, useRef, FC } from 'react';
-import { useDropzone } from 'react-dropzone'
-import Crop from './components/Crop';
+import React, { useState } from 'react';
 import FortuneTeller from './components/FortuneTeller';
-import JankenGame from './components/Janken';
 import Image from './components/Image';
 import Sort from './components/Sort';
-import Card from '@mui/material/Card'
-import FamilyTree from './components/FamilyTree';
 
 
 const App = () => {
@@ -43,13 +38,13 @@ const App = () => {
         <Image />
       </div>
       <div>
+        <Image />
+      </div>
+      <div>
         <FortuneTeller/>
       </div>
       <div>
         <Sort />
-      </div>
-      <div>
-        <Card />
       </div>
     </>
 

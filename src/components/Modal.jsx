@@ -9,8 +9,6 @@ const ModalWrapper = (props) => {
   const {
     id,
     isOpen,
-    isLoading = false,
-    className = null,
     onClickCloseButton = null,
   } = props
 
