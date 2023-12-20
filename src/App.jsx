@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import FortuneTeller from './components/FortuneTeller';
 import Image from './components/Image';
 import Sort from './components/Sort';
+import Select from './components/Select';
 
 
 const App = () => {
@@ -45,6 +46,9 @@ const App = () => {
       </div>
       <div>
         <Sort />
+      </div>
+      <div>
+        <Select />
       </div>
     </>
 

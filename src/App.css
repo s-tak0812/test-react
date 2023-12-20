@@ -63,3 +63,12 @@
   border: 3px solid black;
   margin: 10px;
 }
+
+select option:disabled {
+  background-color: pink;
+}
+
+.deleteButton {
+  display: inline-block;
+  margin-left: 10px;
+}
